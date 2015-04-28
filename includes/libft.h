@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 18:28:00 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/28 18:44:15 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/04/28 23:11:22 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,18 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_list2
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list2	*prev;
+	struct s_list2	*next;
+}					t_list2;
+
 typedef struct		s_buff
 {
 	size_t			length;
-	char			*c;
+	unsigned char	*c;
 }					t_buff;
 
 void				*ft_memset(void *b, int c, size_t len);
@@ -100,6 +108,13 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+t_list2				*ft_lst2new(void const *content, size_t content_size);
+void				ft_lst2delone(t_list2 **alst, void (*del)(void *, size_t));
+void				ft_lst2del(t_list2 **alst, void (*del)(void *, size_t));
+void				ft_lst2add(t_list2 **alst, t_list2 *new);
+void				ft_lst2iter(t_list2 *lst, void (*f)(t_list2 *elem));
+t_list2				*ft_lst2map(t_list2 *lst, t_list2 *(*f)(t_list2 *elem));
 
 int					ft_getnextline(int fd, char **line);
 

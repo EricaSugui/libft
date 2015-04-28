@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:38:10 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/28 18:55:22 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/04/28 22:22:11 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static t_bool	ft_isspace(int c)
 		|| c == '\r'
 		|| c == ' ')
 	{
-		return (1);
+		return (true);
 	}
-	return (0);
+	return (false);
 }
 
 int				ft_atoi(const char *str)

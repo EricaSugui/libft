@@ -6,13 +6,13 @@
 #    By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/28 17:33:23 by apachkof          #+#    #+#              #
-#    Updated: 2015/04/28 19:26:47 by apachkof         ###   ########.fr        #
+#    Updated: 2015/04/28 23:22:32 by apachkof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKE = make
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -O3
+CFLAGS = -Wall -Werror -Wextra -pedantic -O3
 CPPFLAGS = -Iincludes/
 
 NAME = libft.a
@@ -78,7 +78,14 @@ SRC_FILES =	ft_memset.c \
 			ft_lstdel.c \
 			ft_lstadd.c \
 			ft_lstiter.c \
-			ft_lstmap.c
+			ft_lstmap.c \
+			\
+			ft_lst2add.c \
+			ft_lst2del.c \
+			ft_lst2delone.c \
+			ft_lst2iter.c \
+			ft_lst2map.c \
+			ft_lst2new.c
 
 SRC_DIR = .
 
@@ -316,3 +323,21 @@ obj/ft_lstiter.o: ft_lstiter.c includes/libft.h
 
 obj/ft_lstmap.o: ft_lstmap.c includes/libft.h
 	$(CC) -c ./ft_lstmap.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lstmap.o
+
+obj/ft_lst2add.o: ft_lst2add.c includes/libft.h
+	$(CC) -c ./ft_lst2add.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2add.o
+
+obj/ft_lst2del.o: ft_lst2del.c includes/libft.h
+	$(CC) -c ./ft_lst2del.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2del.o
+
+obj/ft_lst2delone.o: ft_lst2delone.c includes/libft.h
+	$(CC) -c ./ft_lst2delone.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2delone.o
+
+obj/ft_lst2iter.o: ft_lst2iter.c includes/libft.h
+	$(CC) -c ./ft_lst2iter.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2iter.o
+
+obj/ft_lst2map.o: ft_lst2map.c includes/libft.h
+	$(CC) -c ./ft_lst2map.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2map.o
+
+obj/ft_lst2new.o: ft_lst2new.c includes/libft.h
+	$(CC) -c ./ft_lst2new.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2new.o
