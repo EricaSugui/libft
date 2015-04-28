@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 18:51:30 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/28 19:52:55 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/04/28 21:01:01 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		++i;
 		if (src_arr[i - 1] == ch)
 		{
-			return (void *)&(src[i]);
+			return (void *)&(src_arr[i]);
 		}
 		if (i == n)
 		{

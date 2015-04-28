@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 19:07:19 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/28 20:49:03 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/04/28 21:19:01 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	cur = new_list;
 	while (lst->next != NULL)
 	{
-		cur->next = f(lst->next);
+		if (cur != NULL)
+			cur->next = f(lst->next);
 		lst = lst->next;
 	}
 	return (new_list);
