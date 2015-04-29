@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lst2shift.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/28 19:05:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/29 20:10:15 by apachkof         ###   ########.fr       */
+/*   Created: 2015/04/29 20:14:58 by apachkof          #+#    #+#             */
+/*   Updated: 2015/04/29 20:15:04 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+t_list2	*ft_lst2shift(t_list2 **alst)
 {
-	t_list	*next;
+	t_list2	*cur;
 
-	if (alst == NULL || new == NULL)
-		return ;
-	next = *alst;
-	*alst = new;
-	new->next = next;
+	if (alst == NULL || (cur = *alst) == NULL)
+		return (NULL);
+	*alst = cur->next;
+	cur->prev = NULL;
+	return (cur);
 }

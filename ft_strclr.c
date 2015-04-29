@@ -6,11 +6,9 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 17:22:45 by apachkof          #+#    #+#             */
-/*   Updated: 2013/11/24 14:38:41 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/04/29 20:11:03 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <string.h>
 
 void	ft_strclr(char *s)
 {

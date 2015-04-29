@@ -6,7 +6,7 @@
 #    By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/28 17:33:23 by apachkof          #+#    #+#              #
-#    Updated: 2015/04/28 23:22:32 by apachkof         ###   ########.fr        #
+#    Updated: 2015/04/29 20:31:24 by apachkof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,12 +80,24 @@ SRC_FILES =	ft_memset.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
 			\
-			ft_lst2add.c \
-			ft_lst2del.c \
+			ft_lstpush.c \
+			ft_lstpop.c \
+			ft_lstshift.c \
+			\
+			ft_lst2new.c \
 			ft_lst2delone.c \
+			ft_lst2del.c \
+			ft_lst2add.c \
 			ft_lst2iter.c \
 			ft_lst2map.c \
-			ft_lst2new.c
+			ft_lst2push.c \
+			ft_lst2pop.c \
+			ft_lst2shift.c \
+			\
+			ft_isupper.c \
+			ft_islower.c \
+			ft_strchrcnt.c
+
 
 SRC_DIR = .
 
@@ -324,14 +336,26 @@ obj/ft_lstiter.o: ft_lstiter.c includes/libft.h
 obj/ft_lstmap.o: ft_lstmap.c includes/libft.h
 	$(CC) -c ./ft_lstmap.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lstmap.o
 
-obj/ft_lst2add.o: ft_lst2add.c includes/libft.h
-	$(CC) -c ./ft_lst2add.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2add.o
+obj/ft_lstpush.o: ft_lstpush.c includes/libft.h
+	$(CC) -c ./ft_lstpush.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lstpush.o
+
+obj/ft_lstpop.o: ft_lstpop.c includes/libft.h
+	$(CC) -c ./ft_lstpop.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lstpop.o
+
+obj/ft_lstshift.o: ft_lstshift.c includes/libft.h
+	$(CC) -c ./ft_lstshift.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lstshift.o
+
+obj/ft_lst2new.o: ft_lst2new.c includes/libft.h
+	$(CC) -c ./ft_lst2new.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2new.o
+
+obj/ft_lst2delone.o: ft_lst2delone.c includes/libft.h
+	$(CC) -c ./ft_lst2delone.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2delone.o
 
 obj/ft_lst2del.o: ft_lst2del.c includes/libft.h
 	$(CC) -c ./ft_lst2del.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2del.o
 
-obj/ft_lst2delone.o: ft_lst2delone.c includes/libft.h
-	$(CC) -c ./ft_lst2delone.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2delone.o
+obj/ft_lst2add.o: ft_lst2add.c includes/libft.h
+	$(CC) -c ./ft_lst2add.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2add.o
 
 obj/ft_lst2iter.o: ft_lst2iter.c includes/libft.h
 	$(CC) -c ./ft_lst2iter.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2iter.o
@@ -339,5 +363,20 @@ obj/ft_lst2iter.o: ft_lst2iter.c includes/libft.h
 obj/ft_lst2map.o: ft_lst2map.c includes/libft.h
 	$(CC) -c ./ft_lst2map.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2map.o
 
-obj/ft_lst2new.o: ft_lst2new.c includes/libft.h
-	$(CC) -c ./ft_lst2new.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2new.o
+obj/ft_lst2push.o: ft_lst2push.c includes/libft.h
+	$(CC) -c ./ft_lst2push.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2push.o
+
+obj/ft_lst2pop.o: ft_lst2pop.c includes/libft.h
+	$(CC) -c ./ft_lst2pop.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2pop.o
+
+obj/ft_lst2shift.o: ft_lst2shift.c includes/libft.h
+	$(CC) -c ./ft_lst2shift.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_lst2shift.o
+
+obj/ft_isupper.o: ft_isupper.c includes/libft.h
+	$(CC) -c ./ft_isupper.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_isupper.o
+
+obj/ft_islower.o: ft_islower.c includes/libft.h
+	$(CC) -c ./ft_islower.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_islower.o
+
+obj/ft_strchrcnt.o: ft_strchrcnt.c
+	$(CC) -c ./ft_strchrcnt.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_strchrcnt.o

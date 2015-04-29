@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 22:47:00 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/28 22:51:05 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/04/29 17:02:20 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list2	*ft_lst2new(void const *content, size_t content_size)
 	if ((link = (t_list2 *)malloc(sizeof(*link))) == NULL)
 		return (NULL);
 	link->next = NULL;
+	link->prev = NULL;
 	if (content != NULL && content_size != 0)
 	{
 		if ((link->content = malloc(content_size)) == NULL)

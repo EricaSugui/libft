@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lst2push.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/28 19:05:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/29 20:10:15 by apachkof         ###   ########.fr       */
+/*   Created: 2015/04/29 18:28:36 by apachkof          #+#    #+#             */
+/*   Updated: 2015/04/29 20:10:07 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lst2push(t_list2 **alst, t_list2 *new)
 {
-	t_list	*next;
+	t_list2	*last;
 
 	if (alst == NULL || new == NULL)
 		return ;
-	next = *alst;
-	*alst = new;
-	new->next = next;
+	if (*alst == NULL)
+	{
+		*alst = new;
+		return ;
+	}
+	last = *alst;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
+	new->prev = last;
 }
