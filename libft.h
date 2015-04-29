@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 18:28:00 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/29 21:38:03 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/04/29 21:45:18 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 
 # include <string.h>
-
-#define SIZE_TRUC 43
 
 typedef enum		e_sign
 {
@@ -114,7 +112,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstpush(t_list **alst, t_list *new);
 t_list				*ft_lstpop(t_list **alst);
 t_list				*ft_lstshift(t_list **alst);
-
 
 t_list2				*ft_lst2new(void const *content, size_t content_size);
 void				ft_lst2delone(t_list2 **alst, void (*del)(void *, size_t));
