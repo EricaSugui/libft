@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 18:28:00 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/29 20:31:46 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/04/29 21:38:03 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,8 @@ t_bool				isupper(int c);
 t_bool				islower(int c);
 
 size_t				ft_strchrcnt(const char *s, char c);
+
+t_list				*ft_strsplitlst(char const *s, char c);
 
 int					ft_getnextline(int fd, char **line);
 

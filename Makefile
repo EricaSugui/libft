@@ -6,7 +6,7 @@
 #    By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/28 17:33:23 by apachkof          #+#    #+#              #
-#    Updated: 2015/04/29 20:34:13 by apachkof         ###   ########.fr        #
+#    Updated: 2015/04/29 21:37:34 by apachkof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,7 +96,9 @@ SRC_FILES =	ft_memset.c \
 			\
 			ft_isupper.c \
 			ft_islower.c \
-			ft_strchrcnt.c
+			\
+			ft_strchrcnt.c \
+			ft_strsplitlst.c
 
 
 SRC_DIR = .
@@ -380,3 +382,6 @@ obj/ft_islower.o: ft_islower.c libft.h
 
 obj/ft_strchrcnt.o: ft_strchrcnt.c
 	$(CC) -c ./ft_strchrcnt.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_strchrcnt.o
+
+obj/ft_strsplitlst.o: ft_strsplitlst.c libft.h
+	$(CC) -c ./ft_strsplitlst.c $(CFLAGS) $(CPPFLAGS) -o  obj/ft_strsplitlst.o
