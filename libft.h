@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 18:28:00 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/29 21:45:18 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/05/06 19:45:01 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,35 @@ t_bool				islower(int c);
 size_t				ft_strchrcnt(const char *s, char c);
 
 t_list				*ft_strsplitlst(char const *s, char c);
+
+t_buff				*ft_buffnew(size_t length);
+void				ft_buffdel(t_buff *b);
+t_buff				*ft_strtobuff(char *s);
+t_buff				*ft_carrtobuff(char *c, size_t length);
+char				*ft_bufftostr(t_buff b);
+void				ft_buffclr(t_buff *b);
+void				ft_buffchr(t_buff *b, int c);
+void				ft_buffbuff(t_buff *b1, t_buff *b2);
+void				ft_buffcpy(t_buff *dst, t_buff *src);
+t_buff				*ft_buffdup(t_buff *b);
+void				ft_putbuff(t_buff *b);
+void				ft_putbuff_fd(t_buff *b);
+void				ft_bufftrim(t_buff *b);
+void				ft_buffiter(t_buff *b, void (*f)(char *));
+void				ft_buffiter(t_buff *b, void (*f)(unsigned int, char *));
+t_buff				*ft_buffmap(t_buff const *b, char (*f)(char));
+t_buff				*ft_buffmapi(t_buff const *b, char (*f)(unsigned int, char));
+
+t_buff				*ft_buffncpy(char *s1, const char *s2, size_t n);
+t_buff				*ft_buffcat(char *s1, const char *s2);
+t_buff				*ft_buffncat(char *s1, const char *s2, size_t n);
+size_t				ft_bufflcat(char *dst, const char *src, size_t size);
+t_buff				*ft_buffchr(const char *s, int c);
+t_buff				*ft_buffrchr(const char *s, int c);
+t_buff				*ft_buffbuff(const char *s1, const char *s2);
+t_buff				*ft_buffnbuff(const char *s1, const char *s2, size_t n);
+int					ft_buffcmp(const char *s1, const char *s2);
+int					ft_buffncmp(const char *s1, const char *s2, size_t n);
 
 int					ft_getnextline(int fd, char **line);
 
