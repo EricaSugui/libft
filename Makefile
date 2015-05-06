@@ -6,12 +6,12 @@
 #    By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/28 17:33:23 by apachkof          #+#    #+#              #
-#    Updated: 2015/05/04 16:31:51 by apachkof         ###   ########.fr        #
+#    Updated: 2015/05/06 15:18:19 by apachkof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-UNAME_S =  $(shell sh -c 'uname -s 2>/dev/null')
+UNAME_S = $(shell sh -c 'uname -s 2>/dev/null')
 MAKE = make
 CC = gcc
 #CXX = clang++
@@ -126,7 +126,7 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 
 debug: CFLAGS = -Wall -Werror -Wextra -pedantic -g3
 ifneq ($(UNAME_S),Darwin)
-debug: CFLAGS +=  -fno-omit-frame-pointer -fsanitize=address -O1
+debug: CFLAGS += -fno-omit-frame-pointer -fsanitize=address -O1
 endif
 debug: OBJ_DIR = debug_dir
 debug: NAME = debug_dir/libft.a
