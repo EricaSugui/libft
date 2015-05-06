@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_buffclr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/29 16:21:23 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/06 19:51:25 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/06 15:58:30 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/06 19:50:23 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_islower(int c)
+void	ft_buffclr(t_buff *b)
 {
-	if (c >= 'a' && c <= 'z')
+	size_t	i;
+
+	i = 0;
+	while (i < b->length)
 	{
-		return (true);
+		b->c[i] = '\0';
+		++i;
 	}
-	return (false);
 }

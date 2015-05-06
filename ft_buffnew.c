@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_buffnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/29 16:21:23 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/06 19:51:25 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/06 19:06:53 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-t_bool	ft_islower(int c)
+t_buff	*ft_buffnew(size_t length)
 {
-	if (c >= 'a' && c <= 'z')
+	t_buff	*buff;
+
+	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
+		return (NULL);
+	buff->length = length;
+	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
 	{
-		return (true);
+		free(buff);
+		return (NULL);
 	}
-	return (false);
+	return (buff);
 }

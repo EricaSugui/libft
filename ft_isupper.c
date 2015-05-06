@@ -6,13 +6,13 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/29 16:19:23 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/29 16:22:17 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/05/06 19:51:13 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	isupper(int c)
+t_bool	ft_isupper(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{

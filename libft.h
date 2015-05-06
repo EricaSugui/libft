@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 18:28:00 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/06 19:45:01 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/05/06 19:51:03 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,8 +123,8 @@ void				ft_lst2push(t_list2 **alst, t_list2 *new);
 t_list2				*ft_lst2pop(t_list2 **alst);
 t_list2				*ft_lst2shift(t_list2 **alst);
 
-t_bool				isupper(int c);
-t_bool				islower(int c);
+t_bool				ft_isupper(int c);
+t_bool				ft_islower(int c);
 
 size_t				ft_strchrcnt(const char *s, char c);
 
@@ -146,7 +146,8 @@ void				ft_bufftrim(t_buff *b);
 void				ft_buffiter(t_buff *b, void (*f)(char *));
 void				ft_buffiter(t_buff *b, void (*f)(unsigned int, char *));
 t_buff				*ft_buffmap(t_buff const *b, char (*f)(char));
-t_buff				*ft_buffmapi(t_buff const *b, char (*f)(unsigned int, char));
+t_buff				*ft_buffmapi(t_buff const *b, \
+char (*f)(unsigned int, char));
 
 t_buff				*ft_buffncpy(char *s1, const char *s2, size_t n);
 t_buff				*ft_buffcat(char *s1, const char *s2);
