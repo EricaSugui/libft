@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 18:28:00 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/06 19:51:03 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/05/16 15:48:26 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ size_t				ft_strchrcnt(const char *s, char c);
 t_list				*ft_strsplitlst(char const *s, char c);
 
 t_buff				*ft_buffnew(size_t length);
-void				ft_buffdel(t_buff *b);
+void				ft_buffdel(t_buff **b);
 t_buff				*ft_strtobuff(char *s);
 t_buff				*ft_carrtobuff(char *c, size_t length);
 char				*ft_bufftostr(t_buff b);
