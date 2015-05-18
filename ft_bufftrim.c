@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_bufftrim.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/18 14:30:27 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/18 22:27:09 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+void	ft_bufftrim(t_buff *b)
 {
-	t_buff	*buff;
+	size_t			begin;
 
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
-		return (NULL);
-	buff->length = length;
-	if (length == 0)
+	if (b->c == NULL || b->length == 0)
+		return ;
+	begin = 0;
+	while (b->length > 0 && (b->c[b->length - 1] == ' '
+				|| b->c[b->length - 1] == '\n' || b->c[b->length - 1] == '\t'))
 	{
-		buff->c = NULL;
-		return (buff);
+		++begin;
+		--(b->length);
 	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
+	while (b->length > 0 && (b->c[b->length - 1] == ' '
+				|| b->c[b->length - 1] == '\n' || b->c[b->length - 1] == '\t'))
 	{
-		free(buff);
-		return (NULL);
+		++begin;
+		--(b->length);
 	}
-	return (buff);
+	ft_memcpy(b->c, &(b->c[begin]), b->length);
 }

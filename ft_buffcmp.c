@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_buffcmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/18 21:29:51 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/18 21:55:31 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+int		ft_buffcmp(const t_buff *b1, const t_buff *b2)
 {
-	t_buff	*buff;
+	size_t	length;
 
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
-		return (NULL);
-	buff->length = length;
-	if (length == 0)
-	{
-		buff->c = NULL;
-		return (buff);
-	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
-	{
-		free(buff);
-		return (NULL);
-	}
-	return (buff);
+	length = (b1->length < b2->length) ? b1->length : b2->length;
+	return (ft_memcmp(b1, b2, length));
 }

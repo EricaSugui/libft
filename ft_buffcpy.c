@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_buffcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/18 13:35:09 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/18 13:57:03 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+t_buff	*ft_buffcpy(t_buff *dst, t_buff *src)
 {
-	t_buff	*buff;
+	size_t	length;
 
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
-		return (NULL);
-	buff->length = length;
-	if (length == 0)
-	{
-		buff->c = NULL;
-		return (buff);
-	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
-	{
-		free(buff);
-		return (NULL);
-	}
-	return (buff);
+	length = (src->length <= dst->length) ? src->length : dst->length;
+	ft_memcpy(dst->c, src->c, length);
+	return (dst);
 }

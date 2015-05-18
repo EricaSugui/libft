@@ -6,7 +6,7 @@
 #    By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/28 17:33:23 by apachkof          #+#    #+#              #
-#    Updated: 2015/05/06 15:18:19 by apachkof         ###   ########.fr        #
+#    Updated: 2015/05/18 22:26:31 by apachkof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,7 +101,31 @@ SRC_FILES =	ft_memset.c \
 			ft_islower.c \
 			\
 			ft_strchrcnt.c \
-			ft_strsplitlst.c
+			ft_strsplitlst.c \
+			\
+			ft_buffbuff.c \
+			ft_buffcat.c \
+			ft_buffchr.c \
+			ft_buffclr.c \
+			ft_buffcmp.c \
+			ft_buffcpy.c \
+			ft_buffdel.c \
+			ft_buffdup.c \
+			ft_buffiter.c \
+			ft_buffmap.c \
+			ft_buffmapi.c \
+			ft_buffnbuff.c \
+			ft_buffncat.c \
+			ft_buffncmp.c \
+			ft_buffncpy.c \
+			ft_buffnew.c \
+			ft_buffrchr.c \
+			ft_bufftostr.c \
+			ft_bufftrim.c \
+			ft_carrtobuff.c \
+			ft_putbuff.c \
+			ft_putbuff_fd.c \
+			ft_strtobuff.c
 
 
 SRC_DIR = .
@@ -333,7 +357,7 @@ $(OBJ_DIR)/ft_putstr_fd.o: $(SRC_DIR)/ft_putstr_fd.c libft.h
 $(OBJ_DIR)/ft_putendl_fd.o: $(SRC_DIR)/ft_putendl_fd.c libft.h
 	$(CC) -c $(SRC_DIR)/ft_putendl_fd.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_putendl_fd.o
 
-$(OBJ_DIR)/ft_putnbr_fd.o: $(SRC_DIR)/ft_putnbr_fd.c libft.h
+$(OBJ_DIR)/ft_putnbr_fd.o: $(SRC_DIR)/ft_putnbr_fd.c
 	$(CC) -c $(SRC_DIR)/ft_putnbr_fd.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_putnbr_fd.o
 
 $(OBJ_DIR)/ft_lstnew.o: $(SRC_DIR)/ft_lstnew.c libft.h
@@ -401,3 +425,72 @@ $(OBJ_DIR)/ft_strchrcnt.o: $(SRC_DIR)/ft_strchrcnt.c
 
 $(OBJ_DIR)/ft_strsplitlst.o: $(SRC_DIR)/ft_strsplitlst.c libft.h
 	$(CC) -c $(SRC_DIR)/ft_strsplitlst.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_strsplitlst.o
+
+$(OBJ_DIR)/ft_buffbuff.o: $(SRC_DIR)/ft_buffbuff.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffbuff.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffbuff.o
+
+$(OBJ_DIR)/ft_buffcat.o: $(SRC_DIR)/ft_buffcat.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffcat.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffcat.o
+
+$(OBJ_DIR)/ft_buffchr.o: $(SRC_DIR)/ft_buffchr.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffchr.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffchr.o
+
+$(OBJ_DIR)/ft_buffclr.o: $(SRC_DIR)/ft_buffclr.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffclr.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffclr.o
+
+$(OBJ_DIR)/ft_buffcmp.o: $(SRC_DIR)/ft_buffcmp.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffcmp.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffcmp.o
+
+$(OBJ_DIR)/ft_buffcpy.o: $(SRC_DIR)/ft_buffcpy.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffcpy.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffcpy.o
+
+$(OBJ_DIR)/ft_buffdel.o: $(SRC_DIR)/ft_buffdel.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffdel.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffdel.o
+
+$(OBJ_DIR)/ft_buffdup.o: $(SRC_DIR)/ft_buffdup.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffdup.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffdup.o
+
+$(OBJ_DIR)/ft_buffiter.o: $(SRC_DIR)/ft_buffiter.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffiter.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffiter.o
+
+$(OBJ_DIR)/ft_buffmap.o: $(SRC_DIR)/ft_buffmap.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffmap.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffmap.o
+
+$(OBJ_DIR)/ft_buffmapi.o: $(SRC_DIR)/ft_buffmapi.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffmapi.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffmapi.o
+
+$(OBJ_DIR)/ft_buffnbuff.o: $(SRC_DIR)/ft_buffnbuff.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffnbuff.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffnbuff.o
+
+$(OBJ_DIR)/ft_buffncat.o: $(SRC_DIR)/ft_buffncat.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffncat.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffncat.o
+
+$(OBJ_DIR)/ft_buffncmp.o: $(SRC_DIR)/ft_buffncmp.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffncmp.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffncmp.o
+
+$(OBJ_DIR)/ft_buffncpy.o: $(SRC_DIR)/ft_buffncpy.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffncpy.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffncpy.o
+
+$(OBJ_DIR)/ft_buffnew.o: $(SRC_DIR)/ft_buffnew.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffnew.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffnew.o
+
+$(OBJ_DIR)/ft_buffrchr.o: $(SRC_DIR)/ft_buffrchr.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_buffrchr.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_buffrchr.o
+
+$(OBJ_DIR)/ft_bufftostr.o: $(SRC_DIR)/ft_bufftostr.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_bufftostr.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_bufftostr.o
+
+$(OBJ_DIR)/ft_bufftrim.o: $(SRC_DIR)/ft_bufftrim.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_bufftrim.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_bufftrim.o
+
+$(OBJ_DIR)/ft_carrtobuff.o: $(SRC_DIR)/ft_carrtobuff.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_carrtobuff.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_carrtobuff.o
+
+$(OBJ_DIR)/ft_putbuff.o: $(SRC_DIR)/ft_putbuff.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_putbuff.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_putbuff.o
+
+$(OBJ_DIR)/ft_putbuff_fd.o: $(SRC_DIR)/ft_putbuff_fd.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_putbuff_fd.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_putbuff_fd.o
+
+$(OBJ_DIR)/ft_strtobuff.o: $(SRC_DIR)/ft_strtobuff.c libft.h
+	$(CC) -c $(SRC_DIR)/ft_strtobuff.c $(CFLAGS) $(CPPFLAGS) -o $(OBJ_DIR)/ft_strtobuff.o

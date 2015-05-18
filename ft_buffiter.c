@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_buffiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/18 19:31:10 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/18 19:41:49 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+void	ft_buffiter(t_buff *b, void (*f)(char *))
 {
-	t_buff	*buff;
+	size_t	i;
 
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
-		return (NULL);
-	buff->length = length;
-	if (length == 0)
+	i = 0;
+	while (i < b->length)
 	{
-		buff->c = NULL;
-		return (buff);
+		f((char *)&(b->c[i]));
+		++i;
 	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
-	{
-		free(buff);
-		return (NULL);
-	}
-	return (buff);
 }

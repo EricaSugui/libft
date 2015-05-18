@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_buffmapi.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/18 21:59:16 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/18 22:12:03 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+t_buff	*ft_buffmapi(t_buff const *b, char (*f)(size_t n, char c))
 {
-	t_buff	*buff;
+	t_buff	*new;
+	size_t	i;
 
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
+	if ((new = ft_buffdup(b)) == NULL)
 		return (NULL);
-	buff->length = length;
-	if (length == 0)
+	i = 0;
+	while (i < b->length)
 	{
-		buff->c = NULL;
-		return (buff);
+		new->c[i] = f(i, new->c[i]);
+		++i;
 	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
-	{
-		free(buff);
-		return (NULL);
-	}
-	return (buff);
+	return (new);
 }

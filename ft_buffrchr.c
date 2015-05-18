@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_buffrchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/18 20:38:34 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/18 21:14:07 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+char	*ft_buffrchr(const t_buff *b, int c)
 {
-	t_buff	*buff;
+	size_t	i;
 
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
+	if (b->length == 0 || b->c == NULL)
 		return (NULL);
-	buff->length = length;
-	if (length == 0)
-	{
-		buff->c = NULL;
-		return (buff);
-	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
-	{
-		free(buff);
-		return (NULL);
-	}
-	return (buff);
+	i = b->length;
+	while (i > 0 && b->c[i] != (unsigned char)c)
+		--i;
+	if (b->c[i] == (unsigned char)c)
+		return ((char *)&(b->c[i]));
+	return (NULL);
 }

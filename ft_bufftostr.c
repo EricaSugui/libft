@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_bufftostr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/18 13:17:30 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/18 13:29:53 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+char	*ft_bufftostr(const t_buff *b)
 {
-	t_buff	*buff;
+	char	*str;
 
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
+	if (b == NULL || b->c == NULL || b->length == 0)
 		return (NULL);
-	buff->length = length;
-	if (length == 0)
-	{
-		buff->c = NULL;
-		return (buff);
-	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
-	{
-		free(buff);
+	if ((str = (char *)malloc(b->length + 1)) == NULL)
 		return (NULL);
-	}
-	return (buff);
+	ft_memcpy(str, b->c, b->length);
+	str[b->length] = '\0';
+	return (str);
 }

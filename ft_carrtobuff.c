@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_carrtobuff.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/16 15:43:50 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/18 13:17:28 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+t_buff	*ft_carrtobuff(char *c, size_t length)
 {
-	t_buff	*buff;
+	t_buff	*b;
 
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
+	if ((b = ft_buffnew(length)) == NULL)
 		return (NULL);
-	buff->length = length;
-	if (length == 0)
+	if (length == 0 || c == NULL)
 	{
-		buff->c = NULL;
-		return (buff);
+		b->c = NULL;
+		return (b);
 	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
-	{
-		free(buff);
-		return (NULL);
-	}
-	return (buff);
+	ft_memcpy(b->c, c, length);
+	return (b);
 }

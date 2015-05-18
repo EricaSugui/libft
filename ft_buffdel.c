@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffnew.c                                       :+:      :+:    :+:   */
+/*   ft_buffdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/06 18:52:57 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/16 18:05:52 by apachkof         ###   ########.fr       */
+/*   Created: 2015/05/16 15:25:13 by apachkof          #+#    #+#             */
+/*   Updated: 2015/05/16 15:31:36 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-t_buff	*ft_buffnew(size_t length)
+void	ft_buffdel(t_buff **b)
 {
-	t_buff	*buff;
-
-	if ((buff = (t_buff *)malloc(sizeof(*buff))) == NULL)
-		return (NULL);
-	buff->length = length;
-	if (length == 0)
+	if (*b != NULL)
 	{
-		buff->c = NULL;
-		return (buff);
+		if ((*b)->c != NULL)
+		{
+			free((*b)->c);
+		}
+		free(*b);
+		*b = NULL;
 	}
-	if ((buff->c = (unsigned char *)malloc(length)) == NULL)
-	{
-		free(buff);
-		return (NULL);
-	}
-	return (buff);
 }
