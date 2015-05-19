@@ -6,7 +6,7 @@
 #    By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/28 17:33:23 by apachkof          #+#    #+#              #
-#    Updated: 2015/05/18 22:26:31 by apachkof         ###   ########.fr        #
+#    Updated: 2015/05/19 21:19:21 by apachkof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,6 +139,17 @@ STEAM = \033[1;30m
 COFFEE = \033[1;31m
 NC = \033[0m
 
+ifneq ($(DEBUG),)
+CFLAGS = -Wall -Werror -Wextra -pedantic -g3
+ifneq ($(UNAME_S),Darwin)
+CFLAGS += -fno-omit-frame-pointer -fsanitize=address -O1
+endif
+OBJ_DIR = debug_dir
+NAME = debug_dir/libft.a
+OBJ_DIR = debug_dir
+NAME = libft_debug.a
+endif
+
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJ)
@@ -147,18 +158,6 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 
 #$(NAME): $(OBJ)
 #	$(CC) $(OBJ) $(LDFLAGS) $(LDLIBS) -o $@
-
-debug: CFLAGS = -Wall -Werror -Wextra -pedantic -g3
-ifneq ($(UNAME_S),Darwin)
-debug: CFLAGS += -fno-omit-frame-pointer -fsanitize=address -O1
-endif
-debug: OBJ_DIR = debug_dir
-debug: NAME = debug_dir/libft.a
-debug: $(NAME)
-
-debug_clean: OBJ_DIR = debug_dir
-debug_clean: NAME = libft_debug.a
-debug_clean: fclean
 
 clean:
 	$(RM) $(OBJ)

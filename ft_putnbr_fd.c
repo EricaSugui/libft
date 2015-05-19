@@ -6,13 +6,13 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 18:28:54 by apachkof          #+#    #+#             */
-/*   Updated: 2015/05/18 14:26:00 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/05/19 21:14:55 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int num, int fd)
+void	ft_putnbr_fd(int num, int fd)
 {
 	char	c;
 	int		weight;
