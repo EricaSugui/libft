@@ -6,7 +6,7 @@
 #    By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/28 17:33:23 by apachkof          #+#    #+#              #
-#    Updated: 2015/05/19 21:19:21 by apachkof         ###   ########.fr        #
+#    Updated: 2015/06/29 22:04:32 by apachkof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,31 +101,7 @@ SRC_FILES =	ft_memset.c \
 			ft_islower.c \
 			\
 			ft_strchrcnt.c \
-			ft_strsplitlst.c \
-			\
-			ft_buffbuff.c \
-			ft_buffcat.c \
-			ft_buffchr.c \
-			ft_buffclr.c \
-			ft_buffcmp.c \
-			ft_buffcpy.c \
-			ft_buffdel.c \
-			ft_buffdup.c \
-			ft_buffiter.c \
-			ft_buffmap.c \
-			ft_buffmapi.c \
-			ft_buffnbuff.c \
-			ft_buffncat.c \
-			ft_buffncmp.c \
-			ft_buffncpy.c \
-			ft_buffnew.c \
-			ft_buffrchr.c \
-			ft_bufftostr.c \
-			ft_bufftrim.c \
-			ft_carrtobuff.c \
-			ft_putbuff.c \
-			ft_putbuff_fd.c \
-			ft_strtobuff.c
+			ft_strsplitlst.c
 
 
 SRC_DIR = .
