@@ -6,7 +6,7 @@
 /*   By: apachkof <apachkof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/29 21:02:47 by apachkof          #+#    #+#             */
-/*   Updated: 2015/04/29 21:36:43 by apachkof         ###   ########.fr       */
+/*   Updated: 2015/06/29 21:47:26 by apachkof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static size_t	ft_wlen(const char *s, char c)
 	len = 0;
 	while (*s != c && *s != '\0')
 	{
-		len++;
-		s++;
+		++len;
+		++s;
 	}
 	return (len);
 }
@@ -30,28 +30,19 @@ static size_t	ft_wlen(const char *s, char c)
 t_list			*ft_strsplitlst(char const *s, char c)
 {
 	t_list	*lst;
-	t_list	*cur;
-	size_t	word_length;
+	size_t	word_len;
 
 	lst = NULL;
 	while (42)
 	{
-		while ((word_length = ft_wlen(s, c)) == 0)
+		while ((word_len = ft_wlen(s, c)) == 0)
 		{
 			if (*s == '\0')
 				return (lst);
 			++s;
 		}
-		if (lst == NULL)
-		{
-			lst = ft_lstnew(ft_strsub(s, 0, word_length), word_length);
-			cur = lst;
-		}
-		else
-		{
-			cur->next = ft_lstnew(ft_strsub(s, 0, word_length), word_length);
-			cur = cur->next;
-		}
+		ft_lstpush(&lst, ft_lstnew(ft_strsub(s, 0, word_len), word_len + 1));
+		s += word_len;
 	}
 	return (lst);
 }
